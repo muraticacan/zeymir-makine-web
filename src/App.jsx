@@ -14,10 +14,10 @@ import './styles/global.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{ overflowX: 'hidden', maxWidth: '100%', minWidth: '100vw' }}>
         <ScrollToTop />
         <Header />
-        <main style={{ paddingTop: '80px' }}>
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />

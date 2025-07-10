@@ -1,11 +1,7 @@
 /* PREMIUM KURUMSAL CAROUSEL TASARIMI */
 .carousel {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   min-height: 380px;
   max-height: 520px;
   overflow: hidden;
@@ -22,7 +18,7 @@
   pointer-events: none;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
   display: flex;
@@ -40,7 +36,7 @@
 }
 
 .carousel-image {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   min-height: 380px;
   max-height: 520px;
@@ -670,18 +666,49 @@
   }
 }
 
+@media (min-width: 769px) {
+  .carousel-indicators-world-class {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 2rem !important;
+    margin: 0 !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .carousel-world-class,
+  .carousel-image-world-class {
+    min-height: 520px;
+    max-height: 650px;
+  }
+} 
+
+@media (max-width: 768px) {
+  .carousel-btn-primary,
+  .carousel-btn-secondary {
+    min-width: 90vw !important;
+    width: 90vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* WORLD-CLASS CAROUSEL - INSPIRED BY PREMIUM REFERENCES */
 .carousel-world-class {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  min-height: 600px;
-  max-height: 720px;
+  width: 100%;
+  min-height: 380px;
+  max-height: 520px;
   overflow: hidden;
-  background: #000;
+  background: #181818;
+  border-radius: 0;
+  box-shadow: none;
   z-index: 1;
   display: flex;
   align-items: stretch;
@@ -694,8 +721,12 @@
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
   z-index: 1;
+  transform: scale(0.98);
 }
 .carousel-slide-world-class.active {
   opacity: 1;
@@ -707,11 +738,11 @@
 .carousel-image-world-class {
   width: 100%;
   height: 100%;
-  min-height: 600px;
-  max-height: 720px;
+  min-height: 380px;
+  max-height: 520px;
   object-fit: cover;
-  filter: brightness(0.75) contrast(1.1) saturate(1.05);
-  transition: filter 0.5s, transform 1s;
+  filter: brightness(0.82) contrast(1.12) saturate(1.1);
+  transition: filter 0.3s;
   display: block;
 }
 .carousel-slide-world-class.active .carousel-image-world-class {
@@ -793,6 +824,8 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
 }
 
 .carousel-btn-primary,
@@ -994,19 +1027,25 @@
 }
 
 @media (max-width: 768px) {
-  .carousel-world-class {
-    min-height: 400px;
-    max-height: 500px;
-  }
+  .carousel-world-class,
   .carousel-image-world-class {
-    min-height: 400px;
-    max-height: 500px;
+    min-height: 480px;
+    max-height: 600px;
   }
   .carousel-content-world-class {
-    left: 5vw;
-    bottom: 6vh;
-    max-width: 82vw;
-    width: 82vw;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .carousel-indicators-world-class {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .carousel-title-world-class {
     font-size: 2rem;
@@ -1042,8 +1081,20 @@
     right: 2vw;
   }
   .carousel-indicators-world-class {
-    bottom: 2rem;
-    gap: 3px;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: auto !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin: 1.5rem auto 0.5rem auto !important;
+    padding: 8px 12px !important;
+  }
+  .carousel-cta-buttons {
+    z-index: 20;
   }
   .carousel-indicator-world-class {
     width: 1px !important;
@@ -1056,13 +1107,10 @@
 }
 
 @media (max-width: 480px) {
-  .carousel-world-class {
-    min-height: 320px;
-    max-height: 400px;
-  }
+  .carousel-world-class,
   .carousel-image-world-class {
-    min-height: 320px;
-    max-height: 400px;
+    min-height: 400px;
+    max-height: 520px;
   }
   .carousel-content-world-class {
     left: 4vw;
@@ -1113,5 +1161,33 @@
   .carousel-indicator-world-class.active {
     width: 2px !important;
     height: 2px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-indicators-world-class {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 2rem !important;
+    margin: 0 !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .carousel-world-class,
+  .carousel-image-world-class {
+    min-height: 520px;
+    max-height: 650px;
+  }
+  .carousel-btn-primary,
+  .carousel-btn-secondary {
+    min-width: 260px !important;
+    width: auto;
   }
 } 

@@ -21,6 +21,9 @@
 html, body {
   scroll-behavior: smooth;
   width: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+  background: #181818;
 }
 
 body {
@@ -29,6 +32,8 @@ body {
   color: var(--primary-black);
   background-color: var(--primary-white);
   overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 /* Typography */
@@ -90,6 +95,7 @@ p {
   padding: 0 1rem;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Section */
@@ -253,4 +259,13 @@ p {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.main-content {
+  padding-top: 80px;
+}
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 56px;
+  }
 } 

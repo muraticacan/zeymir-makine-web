@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Carousel.css';
 
 const slides = [
@@ -37,7 +38,17 @@ const Carousel = () => {
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const progressRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
@@ -102,7 +113,6 @@ const Carousel = () => {
           <div className="carousel-gradient-overlay" />
         </div>
       ))}
-      
       {/* World-Class Content */}
       <div className="carousel-content-world-class">
         <div className="carousel-badge-world-class">
@@ -118,22 +128,28 @@ const Carousel = () => {
           {currentSlide.description}
         </p>
         <div className="carousel-cta-buttons">
-          <button className="carousel-btn-primary">
+          <button className="carousel-btn-primary" onClick={() => navigate('/urunler')}>
             {currentSlide.primaryCTA}
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </button>
-          <button className="carousel-btn-secondary">
+          <button className="carousel-btn-secondary" onClick={() => navigate('/iletisim')}>
             {currentSlide.secondaryCTA}
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2.5 7.5L8.33333 12.5L17.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </button>
         </div>
+        {/* Mobilde indicator butonların altında */}
+        {isMobile && (
+          <div className="carousel-indicators-world-class">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                className={`carousel-indicator-world-class${idx === current ? ' active' : ''}`}
+                onClick={() => setCurrent(idx)}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      
-      {/* Premium Navigation - Minimal */}
+      {/* Ok tuşları her zaman burada */}
       <button className="carousel-nav-world-class prev" onClick={prevSlide} aria-label="Önceki">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -144,19 +160,19 @@ const Carousel = () => {
           <path d="M9 6L15 12L9 18" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
-
-      {/* Bottom Center Indicators */}
-      <div className="carousel-indicators-world-class">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            className={`carousel-indicator-world-class${idx === current ? ' active' : ''}`}
-            onClick={() => setCurrent(idx)}
-            aria-label={`Slide ${idx + 1}`}
-          />
-        ))}
-      </div>
-
+      {/* Masaüstünde indicator carousel ana kapsayıcısının en sonunda */}
+      {!isMobile && (
+        <div className="carousel-indicators-world-class">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              className={`carousel-indicator-world-class${idx === current ? ' active' : ''}`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
       {/* Subtle Progress Bar */}
       <div className="carousel-progress-world-class">
         <div className="carousel-progress-fill" style={{ width: `${progress * 100}%` }} />
