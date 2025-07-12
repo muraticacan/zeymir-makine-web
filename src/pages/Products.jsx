@@ -439,7 +439,10 @@ const Products = () => {
                     >
                       Detayları İncele
                     </button>
-                    <button className="btn btn-secondary">
+                    <button 
+                      className="btn btn-secondary"
+                      onClick={() => navigate('/iletisim')}
+                    >
                       Teklif Al
                     </button>
                   </div>
