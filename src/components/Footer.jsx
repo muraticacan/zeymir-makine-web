@@ -64,6 +64,18 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <p>&copy; {currentYear} Zeymir Makine. Tüm hakları saklıdır.</p>
+          <p className="designer-credit">
+            Bu site{' '}
+            <a 
+              href="https://www.huseyinkarabulut.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="designer-link"
+            >
+              Hüseyin Karabulut
+            </a>{' '}
+            tarafından tasarlanmıştır
+          </p>
         </div>
       </div>
     </footer>
