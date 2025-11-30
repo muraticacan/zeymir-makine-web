@@ -27,7 +27,8 @@ const Products = () => {
     { id: 'heating-furnaces', name: 'Isıtma / Tavlama Fırınları' },
     { id: 'ceramic-furnaces', name: 'Seramik Pişirme Fırınları' },
     { id: 'precision-casting', name: 'Hassas Döküm Makinaları' },
-    { id: 'cutting-machines', name: 'Kesim Makinaları' }
+    { id: 'cutting-machines', name: 'Kesim Makinaları' },
+    { id: 'printing-machines', name: 'Baskı Makineleri' }
   ];
 
   // Kategori adı ile id eşlemesi
@@ -300,6 +301,30 @@ const Products = () => {
       images: [
         '/images/products/kesim-makineleri/seramik-kesim-makinesi-iki-kafali-1.jpg'
       ]
+    },
+    {
+      id: 11,
+      name: 'Yarı Otomatik Düz Serigrafi Baskı Makinası',
+      slug: 'yari-otomatik-duz-serigrafi-baski-makinasi',
+      category: 'printing-machines',
+      description: 'Düz yüzeylere (seramik, cam, metal, plastik, karton) yüksek kaliteli serigrafi baskı yapabilen yarı otomatik serigrafi baskı makinası. Otomatik baskı kafası hareketi, PLC kontrollü sistem ve güçlü vakum motoru ile malzeme sabitleme özellikleri sunar. Pnömatik ragle kontrolü ve hassas ayar mekanizmaları ile profesyonel baskı sonuçları elde edin. Orta ve büyük ölçekli üretimler için ideal.',
+      shortDesc: 'Yarı otomatik düz serigrafi baskı makinası - Vakumlu, PLC kontrollü',
+      features: [
+        'Yarı otomatik çalışma sistemi',
+        'Düz yüzey baskı kapasitesi',
+        'Güçlü vakum motoru ile malzeme sabitleme',
+        'Otomatik baskı kafası hareketi',
+        'Pnömatik ragle basınç kontrolü',
+        'PLC kontrollü otomasyon',
+        'Hassas manuel ayar mekanizmaları',
+        'Güvenlik sensörleri ve acil durdurma',
+        'Geniş baskı alanı kapasitesi'
+      ],
+      images: [
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-01.jpeg',
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-02.jpeg',
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-03.jpeg'
+      ]
     }
   ];
 
@@ -337,14 +362,14 @@ const Products = () => {
               ENDÜSTRİYEL MAKİNE ÇÖZÜMLERİ
             </div>
             <h1>Ürünlerimiz</h1>
-            <p>Isıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları ve kesim makinaları alanlarında öncü, yenilikçi ve güvenilir makine çözümlerimizi keşfedin. 25+ yıllık deneyimimizle üretim verimliliğinizi artırın.</p>
+            <p>Isıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları, kesim makinaları ve baskı makineleri alanlarında öncü, yenilikçi ve güvenilir makine çözümlerimizi keşfedin. 25+ yıllık deneyimimizle üretim verimliliğinizi artırın.</p>
             <div className="hero-stats">
               <div className="stat-item">
                 <div className="stat-number">25+</div>
                 <div className="stat-label">YIL DENEYİM</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">4</div>
+                <div className="stat-number">5</div>
                 <div className="stat-label">ÜRÜN KATEGORİSİ</div>
               </div>
               <div className="stat-item">

@@ -14,7 +14,8 @@ const ProductDetail = () => {
     { id: 'heating-furnaces', name: 'Isıtma / Tavlama Fırınları' },
     { id: 'ceramic-furnaces', name: 'Seramik Pişirme Fırınları' },
     { id: 'precision-casting', name: 'Hassas Döküm Makinaları' },
-    { id: 'cutting-machines', name: 'Kesim Makinaları' }
+    { id: 'cutting-machines', name: 'Kesim Makinaları' },
+    { id: 'printing-machines', name: 'Baskı Makineleri' }
   ];
 
   // Ürün verileri (Products.jsx'ten aynı veriler)
@@ -222,6 +223,30 @@ const ProductDetail = () => {
 
       images: [
         '/images/products/kesim-makineleri/seramik-kesim-makinesi-iki-kafali-1.jpg'
+      ]
+    },
+    {
+      id: 11,
+      name: 'Yarı Otomatik Düz Serigrafi Baskı Makinası',
+      slug: 'yari-otomatik-duz-serigrafi-baski-makinasi',
+      category: 'printing-machines',
+      description: 'Düz yüzeylere (seramik, cam, metal, plastik, karton) yüksek kaliteli serigrafi baskı yapabilen yarı otomatik serigrafi baskı makinası. Otomatik baskı kafası hareketi, PLC kontrollü sistem ve güçlü vakum motoru ile malzeme sabitleme özellikleri sunar. Pnömatik ragle kontrolü ve hassas ayar mekanizmaları ile profesyonel baskı sonuçları elde edin. Orta ve büyük ölçekli üretimler için ideal.',
+      shortDesc: 'Yarı otomatik düz serigrafi baskı makinası - Vakumlu, PLC kontrollü',
+      features: [
+        'Yarı otomatik çalışma sistemi',
+        'Düz yüzey baskı kapasitesi',
+        'Güçlü vakum motoru ile malzeme sabitleme',
+        'Otomatik baskı kafası hareketi',
+        'Pnömatik ragle basınç kontrolü',
+        'PLC kontrollü otomasyon',
+        'Hassas manuel ayar mekanizmaları',
+        'Güvenlik sensörleri ve acil durdurma',
+        'Geniş baskı alanı kapasitesi'
+      ],
+      images: [
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-01.jpeg',
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-02.jpeg',
+        '/images/products/baski-makineleri/serigrafi-baski-makinesi-03.jpeg'
       ]
     }
   ];

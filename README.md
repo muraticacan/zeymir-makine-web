@@ -6,7 +6,7 @@ Zeymir Makine Otom. İnş. Seramik San. ve Tic. Ltd. Şti. için modern, respons
 
 - **Firma Adı:** Zeymir Makine
 - **Tam Adı:** Zeymir Makine Otom. İnş. Seramik San. ve Tic. Ltd. Şti.
-- **Faaliyet Alanı:** Isıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları ve kesim makinaları üretimi
+- **Faaliyet Alanı:** Isıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları, kesim makinaları ve baskı makinaları üretimi
 - **Konum:** Konya, Türkiye
 - **Deneyim:** 25+ yıl
 
@@ -35,7 +35,8 @@ zeymir-makine/
 │       │   ├── firinlar/
 │       │   ├── seramik-pisirme-firinlari/
 │       │   ├── hassas-dokum/
-│       │   └── kesim-makineleri/
+│       │   ├── kesim-makineleri/
+│       │   └── baski-makineleri/
 │       └── references/      # Referans firma logoları
 ├── src/
 │   ├── components/          # Yeniden kullanılabilir bileşenler
@@ -98,7 +99,7 @@ zeymir-makine/
 - **Carousel Slider:** Otomatik geçişli ürün tanıtımı
 - **Hero Section:** Firma tanıtımı ve istatistikler
 - **Neden Zeymir Makine?:** Kaliteli üretim, güvenilir hizmet, özel çözümler
-- **Ürün Kategorileri:** 4 ana kategori önizlemesi
+- **Ürün Kategorileri:** 5 ana kategori önizlemesi
 - **Referanslar:** 13 referans firma logosu
 - **SEO:** Title, meta description, Open Graph, Twitter Cards
 
@@ -109,11 +110,12 @@ zeymir-makine/
 - **SEO:** Sayfa özel meta etiketleri
 
 ### 3. Ürünler (/urunler)
-- **Kategori Filtreleme:** 4 ana kategori
+- **Kategori Filtreleme:** 5 ana kategori
   - Isıtma / Tavlama Fırınları
   - Seramik Pişirme Fırınları
   - Hassas Döküm Makinaları
   - Kesim Makinaları
+  - Baskı Makineleri
 - **Ürün Kartları:** Görsel, başlık, açıklama
 - **URL Yapısı:** SEO uyumlu `/urunler/:kategori` ve `/urun/:slug`
 - **Breadcrumb Navigation:** Schema.org uyumlu
@@ -175,7 +177,7 @@ npm run preview
 - [x] React Router ile sayfa yönlendirme
 - [x] WhatsApp iletişim butonu
 - [x] İletişim formu
-- [x] 4 ürün kategorisi ve filtreleme
+- [x] 5 ürün kategorisi ve filtreleme
 - [x] Ürün detay sayfaları
 - [x] Carousel slider (otomatik geçiş)
 - [x] Referanslar bölümü
@@ -243,6 +245,9 @@ npm run preview
 ### 4. Kesim Makinaları
 - Seramik Kesim Makinesi – İki Kafalı
 
+### 5. Baskı Makineleri
+- Yarı Otomatik Düz Serigrafi Baskı Makinası
+
 ## 📞 İletişim Bilgileri
 
 ### Firma Bilgileri
@@ -263,4 +268,4 @@ Bu proje kurumsal bir web sitesi olduğu için katkıda bulunma kapalıdır. Sor
 
 **Zeymir Makine** - Kalite ve İnovasyonun Adresi 🏭
 
-*Son güncelleme: Temmuz 2025*
+*Son güncelleme: Kasım 2025*

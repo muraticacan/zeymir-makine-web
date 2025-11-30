@@ -84,6 +84,11 @@ const Home = () => {
       title: "Kesim Makinaları",
       description: "Seramik malzemelerin kesimi için iki kafalı endüstriyel kesim makinesi.",
       features: ["İki Kafalı Sistem", "Hassas Kesim", "Yüksek Verimlilik"]
+    },
+    {
+      title: "Baskı Makineleri",
+      description: "Seramik, cam, metal ve plastik malzemeler üzerine yüksek kaliteli baskı yapabilen endüstriyel serigrafi baskı makineleri.",
+      features: ["Otomatik ve Yarı Otomatik Modlar", "Hassas Baskı Kontrolü", "Geniş Uygulama Alanı"]
     }
   ];
 
@@ -160,8 +165,8 @@ const Home = () => {
             </h1>
             
             <p className="hero-description-professional">
-              15 yılı aşkın deneyimimizle, ısıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları 
-              ve kesim makinaları alanlarında sektörün güvenilir çözüm ortağıyız. Kaliteli üretim ve müşteri memnuniyeti önceliğimizdir.
+              15 yılı aşkın deneyimimizle, ısıtma fırınları, seramik pişirme fırınları, hassas döküm makinaları, 
+              kesim makinaları ve baskı makineleri alanlarında sektörün güvenilir çözüm ortağıyız. Kaliteli üretim ve müşteri memnuniyeti önceliğimizdir.
             </p>
             
             <div className="hero-stats-professional">
