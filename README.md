@@ -137,6 +137,22 @@ zeymir-makine/
 - **Kullanıcı Dostu:** Anasayfaya yönlendirme
 - **SEO:** Uygun meta etiketleri
 
+## 🔍 Google Search Console Kurulumu
+
+### Site Sahipliği Doğrulama
+Site Google Search Console'da doğrulanmıştır. Doğrulama için HTML meta etiketi yöntemi kullanılmıştır.
+
+**Doğrulama Meta Etiketi:**
+- `index.html` dosyasının `<head>` bölümüne Google Search Console doğrulama meta etiketi eklenmiştir
+- Meta etiketi: `<meta name="google-site-verification" content="jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc" />`
+- **Önemli:** Doğrulama başarılı olduktan sonra bu meta etiketi kaldırılmamalıdır, aksi halde doğrulama kaybolur
+
+**Yeni Doğrulama Yapılacaksa:**
+1. Google Search Console'dan yeni doğrulama kodu alın
+2. `index.html` dosyasındaki mevcut meta etiketini yeni kodla güncelleyin
+3. Değişiklikleri deploy edin
+4. Google Search Console'da "Doğrula" butonuna tıklayın
+
 ## 🔧 Kurulum ve Çalıştırma
 
 ### Gereksinimler
@@ -186,6 +202,7 @@ npm run preview
 - [x] Breadcrumb navigation
 - [x] Canonical URL'ler
 - [x] robots.txt ve sitemap.xml
+- [x] Google Search Console doğrulama
 - [x] Performance optimizasyonu
 - [x] Accessibility (ARIA labels)
 - [x] Cross-browser uyumluluk
@@ -196,6 +213,7 @@ npm run preview
 - **Title:** Her sayfa için optimize edilmiş başlıklar
 - **Description:** Anahtar kelime odaklı açıklamalar
 - **Keywords:** Ürün kategorileri ve anahtar kelimeler
+- **Google Search Console:** Site sahipliği doğrulama meta etiketi (index.html'de mevcut)
 - **Open Graph:** Facebook ve sosyal medya paylaşımları
 - **Twitter Cards:** Twitter paylaşımları
 - **Canonical:** Duplicate content önleme
@@ -210,6 +228,7 @@ npm run preview
 - **URL Yapısı:** SEO uyumlu URL'ler
 - **Sitemap:** XML sitemap
 - **Robots.txt:** Arama motoru yönergeleri
+- **Google Search Console:** Site sahipliği doğrulaması yapıldı (meta etiketi index.html'de mevcut)
 - **Image Alt Tags:** Anahtar kelime odaklı
 - **Page Speed:** Optimized loading
 
