@@ -140,17 +140,71 @@ zeymir-makine/
 ## 🔍 Google Search Console Kurulumu
 
 ### Site Sahipliği Doğrulama
-Site Google Search Console'da doğrulanmıştır. Doğrulama için HTML meta etiketi yöntemi kullanılmıştır.
+Site Google Search Console'da doğrulanmıştır. Doğrulama için DNS TXT kaydı yöntemi kullanılmıştır.
 
-**Doğrulama Meta Etiketi:**
-- `index.html` dosyasının `<head>` bölümüne Google Search Console doğrulama meta etiketi eklenmiştir
-- Meta etiketi: `<meta name="google-site-verification" content="jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc" />`
-- **Önemli:** Doğrulama başarılı olduktan sonra bu meta etiketi kaldırılmamalıdır, aksi halde doğrulama kaybolur
+**DNS TXT Kaydı Yöntemi:**
+- Alan adı sağlayıcısında (DNS yönetim panelinde) TXT kaydı oluşturulmuştur
+- TXT kaydı formatı: `google-site-verification=jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc`
+- **Önemli:** DNS kaydı silinmemelidir, aksi halde doğrulama kaybolur
+- Bu yöntem tüm alt alan adları için geçerlidir ve HTML dosyası değişikliği gerektirmez
+
+### DNS TXT Kaydı Yöntemi - Adım Adım Kurulum
+
+**1. Google Search Console'dan Doğrulama Kodu Alma:**
+   - Google Search Console'a giriş yapın (https://search.google.com/search-console)
+   - "Özellik ekle" veya "Add property" butonuna tıklayın
+   - "Alan adı" (Domain) seçeneğini seçin
+   - Alan adınızı girin (örn: `zeymirmakine.com`)
+   - "Devam" butonuna tıklayın
+   - "Alan adı sağlayıcı" (Domain name provider) yöntemini seçin
+   - Google size bir TXT kaydı kodu verecektir
+   - Kodu kopyalayın (örn: `jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc`)
+
+**2. Alan Adı Sağlayıcısına Giriş:**
+   - Alan adınızı satın aldığınız sağlayıcının web sitesine giriş yapın
+   - Yaygın sağlayıcılar: GoDaddy, Namecheap, Türk Telekom, Cloudflare, Google Domains vb.
+   - Hesap paneline giriş yapın
+
+**3. DNS Yönetim Paneline Erişim:**
+   - Alan adı yönetimi veya DNS yönetimi bölümüne gidin
+   - Genellikle "DNS Ayarları", "DNS Yönetimi", "DNS Records" veya "Zone Editor" olarak adlandırılır
+   - Alan adınızı seçin
+
+**4. TXT Kaydı Ekleme:**
+   - "Kayıt Ekle" (Add Record) veya benzer bir butona tıklayın
+   - Kayıt türü olarak **TXT** seçin
+   - **İsim/Alan (Name/Host):** Alanı boş bırakın veya `@` veya `zeymirmakine.com` yazın
+   - **Değer (Value/Content):** Google'dan aldığınız kodu şu formatta girin:
+     ```
+     google-site-verification=jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc
+     ```
+   - **TTL (Time To Live):** Varsayılan değeri kullanın (genellikle 3600 veya 1 saat)
+   - Kaydı kaydedin
+
+**5. DNS Yayılması Bekleme:**
+   - DNS değişikliklerinin yayılması 5 dakika ile 48 saat arasında sürebilir
+   - Genellikle 1-2 saat içinde aktif olur
+   - DNS yayılmasını kontrol etmek için online araçlar kullanabilirsiniz (örn: whatsmydns.net)
+
+**6. Google Search Console'da Doğrulama:**
+   - Google Search Console'a geri dönün
+   - "Doğrula" (Verify) butonuna tıklayın
+   - Google DNS kaydınızı kontrol edecektir
+   - Eğer hemen bulamazsa, birkaç saat bekleyip tekrar deneyin
+   - Doğrulama başarılı olduğunda onay mesajı görünecektir
+
+**Örnek DNS Kaydı Görünümü:**
+```
+Türü: TXT
+İsim: @ (veya boş)
+Değer: google-site-verification=jDoIBOG77znITbff4WzUvpS95dfJIde6WfTELIC6Lbc
+TTL: 3600
+```
 
 **Yeni Doğrulama Yapılacaksa:**
 1. Google Search Console'dan yeni doğrulama kodu alın
-2. `index.html` dosyasındaki mevcut meta etiketini yeni kodla güncelleyin
-3. Değişiklikleri deploy edin
+2. Alan adı sağlayıcısının DNS yönetim panelinde mevcut TXT kaydını yeni kodla güncelleyin
+3. DNS yayılması için 1-48 saat bekleyin
 4. Google Search Console'da "Doğrula" butonuna tıklayın
 
 ## 🔧 Kurulum ve Çalıştırma
@@ -213,7 +267,7 @@ npm run preview
 - **Title:** Her sayfa için optimize edilmiş başlıklar
 - **Description:** Anahtar kelime odaklı açıklamalar
 - **Keywords:** Ürün kategorileri ve anahtar kelimeler
-- **Google Search Console:** Site sahipliği doğrulama meta etiketi (index.html'de mevcut)
+- **Google Search Console:** Site sahipliği doğrulama DNS TXT kaydı ile yapılmıştır
 - **Open Graph:** Facebook ve sosyal medya paylaşımları
 - **Twitter Cards:** Twitter paylaşımları
 - **Canonical:** Duplicate content önleme
@@ -228,7 +282,7 @@ npm run preview
 - **URL Yapısı:** SEO uyumlu URL'ler
 - **Sitemap:** XML sitemap
 - **Robots.txt:** Arama motoru yönergeleri
-- **Google Search Console:** Site sahipliği doğrulaması yapıldı (meta etiketi index.html'de mevcut)
+- **Google Search Console:** Site sahipliği doğrulaması DNS TXT kaydı ile yapılmıştır
 - **Image Alt Tags:** Anahtar kelime odaklı
 - **Page Speed:** Optimized loading
 
